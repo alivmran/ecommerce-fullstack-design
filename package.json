@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "server": "cd backend && npm start",
-  "client": "cd frontend && npm run dev",
-  "dev": "concurrently \"npm run server\" \"npm run client\""
-},
+    "server": "cd BackEnd && npm start",
+    "client": "cd FrontEnd && npm run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "postinstall": "cd FrontEnd && npm install && cd ../BackEnd && npm install"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
