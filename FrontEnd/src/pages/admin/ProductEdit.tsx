@@ -25,7 +25,7 @@ const ProductEdit = () => {
   useEffect(() => {
     if (!isNewProduct && id) {
       const fetchProduct = async () => {
-        const res = await fetch(`http://localhost:5000/api/products/${id}`);
+        const res = await fetch(`/api/products/${id}`);
         const data = await res.json();
         setName(data.name);
         setPrice(data.price);
@@ -44,8 +44,8 @@ const ProductEdit = () => {
 
     try {
       const url = isNewProduct 
-        ? "http://localhost:5000/api/products"
-        : `http://localhost:5000/api/products/${id}`;
+        ? "/api/products"
+        : `/api/products/${id}`;
       
       const method = isNewProduct ? "POST" : "PUT";
 

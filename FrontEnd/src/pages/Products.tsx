@@ -28,8 +28,8 @@ const Products = () => {
       setLoading(true);
       try {
         const url = searchKeyword 
-          ? `http://localhost:5000/api/products?keyword=${searchKeyword}`
-          : `http://localhost:5000/api/products`;
+          ? `/api/products?keyword=${searchKeyword}`
+          : `/api/products`;
           
         const res = await fetch(url);
         const data = await res.json();

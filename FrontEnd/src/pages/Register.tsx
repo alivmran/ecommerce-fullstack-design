@@ -31,7 +31,7 @@ const Register = () => {
   const submitHandler = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5000/api/users", {
+      const res = await fetch("/api/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         // Send adminSecret to backend to pass the security check

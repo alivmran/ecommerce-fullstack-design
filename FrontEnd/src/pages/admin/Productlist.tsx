@@ -29,7 +29,7 @@ const ProductList = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/products");
+      const res = await fetch("/api/products");
       const data = await res.json();
       setProducts(data);
     } catch (error) {
@@ -48,7 +48,7 @@ const ProductList = () => {
   const deleteHandler = async (id: string) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
       try {
-        const res = await fetch(`http://localhost:5000/api/products/${id}`, {
+        const res = await fetch(`/api/products/${id}`, {
           method: "DELETE",
           headers: {
             Authorization: `Bearer ${user?.token}`,
