@@ -1,6 +1,16 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { Product } from "@/data/products";
+
+export interface Product {
+  id: string | number; 
+  name: string;
+  price: number;
+  image: string;
+  category: string;
+  description?: string;
+  stock?: number;
+  _id?: string; 
+}
 
 interface CartItem {
   product: Product;
@@ -10,8 +20,8 @@ interface CartItem {
 interface CartStore {
   items: CartItem[];
   addItem: (product: Product) => void;
-  removeItem: (productId: number) => void;
-  updateQuantity: (productId: number, quantity: number) => void;
+  removeItem: (productId: string | number) => void; 
+  updateQuantity: (productId: string | number, quantity: number) => void;
   clearCart: () => void;
   getTotalPrice: () => number;
 }
@@ -72,7 +82,7 @@ export const useCartStore = create<CartStore>()(
       },
     }),
     {
-      name: "cart-storage",
+      name: "cart-storage", 
     }
   )
 );
