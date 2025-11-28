@@ -7,7 +7,8 @@
     "server": "cd BackEnd && npm start",
     "client": "cd FrontEnd && npm run dev",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "postinstall": "cd FrontEnd && npm install && cd ../BackEnd && npm install"
+    "postinstall": "cd FrontEnd && npm install && cd ../BackEnd && npm install",
+    "build": "cd FrontEnd && npm run build"
   },
   "keywords": [],
   "author": "",
